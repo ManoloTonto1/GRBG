@@ -1,8 +1,14 @@
 # GRBG (Garbage)
 
-![GRBG Logo](logo.webp)
+<p align="center">
+    <img src="logo.webp" alt="GRBG Logo" width="500" height="500">
+</p>
 
 GRBG is a Go-based fuzzer designed for CTFs (Capture The Flag competitions). It is a lightweight tool with no external dependencies, making it easy to use and deploy.
+
+## Active Development
+
+Currently, GRBG has one exploiter implemented, which is the format string exploiter. This exploiter allows you to perform format string attacks during CTFs. We are actively working on adding more exploiters to enhance the capabilities of GRBG.
 
 ## Features
 
