@@ -35,7 +35,7 @@ To install GRBG, follow these steps:
 3. Run GRBG:
 
    ```shell
-   ./GRBG -success <success_flag> -fail <fail_flag> -bin <relative_path_to_executable>
+   ./GRBG -success=<success_flag> -fail=<fail_flag> -bin=<relative_path_to_executable>
    ```
 
 ## Usage
