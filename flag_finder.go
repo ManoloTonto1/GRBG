@@ -16,7 +16,7 @@ func ExtractFlag(str string) string {
 func ExtractFlagFromData(data map[string]string) map[string][]string {
 	dataMap := map[string][]string{}
 	for specifier, output := range data {
-		if strings.Contains(output, globalScope.flags[SUCCESS_STRING]) {
+		if strings.Contains(output, specifier) {
 			hexStrings := strings.Split(output, ".")
 			for _, hexString := range hexStrings {
 				str, err := hex.DecodeString(hexString)

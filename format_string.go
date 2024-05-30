@@ -36,7 +36,7 @@ func (f *formatStringExploiter) FindWorkingFormatSpecifiers() []string {
 	for _, specifier := range specifiers {
 		cmd := NewCMD(globalScope.binaryPath)
 		output := cmd.Send([]byte(specifier))
-		if strings.Contains(string(output), globalScope.flags[SUCCESS_STRING]) {
+		if strings.Contains(string(output), specifier) {
 			validSpecifiers = append(validSpecifiers, specifier)
 		}
 		cmd.Stop()
