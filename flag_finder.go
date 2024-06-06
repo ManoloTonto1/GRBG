@@ -16,17 +16,15 @@ func ExtractFlag(str string) string {
 func ExtractFlagFromData(data map[string]string) map[string][]string {
 	dataMap := map[string][]string{}
 	for specifier, output := range data {
-		if strings.Contains(output, globalScope.flags[SUCCESS_STRING]) {
-			hexStrings := strings.Split(output, ".")
-			for _, hexString := range hexStrings {
-				str, err := hex.DecodeString(hexString)
-				if err != nil {
-					continue
-				}
-				dataMap[specifier] = append(dataMap[specifier], Reverse(string(str)))
+		hexStrings := strings.Split(output, "_")
+		for _, hexString := range hexStrings {
+			str, err := hex.DecodeString(hexString)
+			if err != nil {
+				continue
 			}
-
+			dataMap[specifier] = append(dataMap[specifier], Reverse(string(str)))
 		}
+
 	}
 	return dataMap
 }
