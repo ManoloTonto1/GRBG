@@ -5,6 +5,8 @@ import (
 	"fmt"
 	"os/exec"
 	"strings"
+
+	"github.com/manolotonto1/GRBG/fuzzing"
 )
 
 type formatStringExploiter struct {
@@ -142,7 +144,7 @@ func (f *formatStringExploiter) Exploit() bool {
 	specifiers := f.FindWorkingFormatSpecifiers()
 	data := f.ExtractDataFromFormatSpecifiers(specifiers)
 
-	readableData := ExtractFlagFromData(data)
+	readableData := fuzzing.ExtractFlagFromData(data)
 	possibleFlags := []string{}
 	for _, d := range readableData {
 		possibleFlags = append(possibleFlags, strings.Join(d, ""))
@@ -151,7 +153,7 @@ func (f *formatStringExploiter) Exploit() bool {
 	fmt.Println("Possible flags:")
 	for _, possibleFlag := range possibleFlags {
 		fmt.Println(possibleFlag)
-		flag := ExtractFlag(possibleFlag)
+		flag := fuzzing.ExtractFlag(possibleFlag)
 		if flag != "" {
 			fmt.Println("Flag found: ", flag)
 			return true

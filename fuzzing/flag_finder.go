@@ -1,4 +1,4 @@
-package main
+package fuzzing
 
 import (
 	"encoding/hex"

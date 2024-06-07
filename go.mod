@@ -1,3 +1,3 @@
-module github.com/manolotonto1/fuzzer
+module github.com/manolotonto1/GRBG
 
-go 1.21.1
+go 1.22.4
